@@ -1,3 +1,23 @@
+const addBtn = document.querySelector('#add');
+const subtractBtn = document.querySelector('#subtract');
+const multiplyBtn = document.querySelector('#multiply');
+const divideBtn = document.querySelector('#divide');
+
+const displaySpan = document.querySelector('.result_num');
+
+const numArray = document.querySelectorAll('.number');
+
+let selectedNum = '';
+
+const displayNum = n => {
+    
+    selectedNum += n;
+    displaySpan.textContent =`${selectedNum}`
+}
+
+numArray.forEach(n => n.addEventListener('click', e => displayNum(e.target.value)));
+
+
 // basic functions
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
